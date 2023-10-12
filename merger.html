@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: rgb(16, 235, 210);
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+<title>Merger Page</title></head>
+
+
+
+<body>
+    <h2>Nagarjuna Reddy, Kunkala Builds a Merger</h2>
+    <input type="text" id="inputText"><br><br>
+		<div class="flex-container" id="target">
+		  <div class="merger">row item 1</div>   
+		  <div class="merger">row item 2</div>  
+		  <div class="merger">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="makeNewDiv()">Add end</button>
+        <button onclick="addFront()">Add Front</button>
+		<button onclick="remove()">Remove</button>
+        <!-- <button onclick="swap()">Swap</button> -->
+
+	
+	
+</body>
+<script>
+    function makeNewDiv() {
+	const newElement = document.createElement('div');
+
+const inputValue = document.getElementById('inputText').value;
+
+newElement.innerHTML = inputValue;
+newElement.className = 'merger';
+
+document.querySelector('.flex-container').appendChild(newElement);
+}
+
+// function remove() {
+//       const mergerItems = document.getElementsByClassName('merger');
+//       const length = mergerItems.length;
+
+//       if (length > 0) {
+//         const middleIndex = Math.floor(length / 2);
+//         const removedElement = document.querySelector('.flex-container').children[middleIndex];
+//         removedElement.remove();
+//       }
+//     }
+
+//     function addFront() {
+//       const newElement = document.createElement('div');
+//       const inputValue = document.getElementById('inputText').value;
+//       newElement.innerHTML = inputValue;
+//       newElement.className = 'merger';
+//       const container = document.querySelector('.flex-container');
+//       container.insertBefore(newElement, container.firstChild);
+//     }
+
+//     function swap() {
+//     const mergerItems = document.getElementsByClassName('merger');
+//     const length = mergerItems.length;
+
+//     if (length >= 2) {
+//       const index1 = Math.floor(Math.random() * length);
+//       let index2 = Math.floor(Math.random() * length);
+
+//       while (index2 === index1) {
+//         index2 = Math.floor(Math.random() * length);
+//       }
+
+//       const parent = document.getElementById('target');
+
+//       const item1 = mergerItems[index1];
+//       const item2 = mergerItems[index2];
+
+//       const item1Next = item1.nextSibling;
+//       const item2Next = item2.nextSibling;
+
+//       parent.insertBefore(item1, item2Next);
+//       parent.insertBefore(item2, item1Next);
+//     }
+//   }
+</script>
+</html>	
