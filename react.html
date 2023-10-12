@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reaction Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h2>Speed Check Nagarjuna Reddy, Kunkala</h2><br>
+    <div  class="p-2 bg-info flex-fill" id="target">Your time</div>
+    <div class="p-2 bg-success flex-fill"  id="countdown">Count</div><br>
+    <button class="btn btn-warning" type="submit" onclick="startTime()">Start Timer</button>
+    <button class="btn btn-warning" type="submit" onclick="recordTime()">React</button><br>
+    <script>
+        var reactTime = Date.now()
+        function recordTime() {
+            reactTime = Date.now()
+            console.log(myTime)
+        }
+    </script>
+    <script>
+        function startTime() {
+            let min = 2
+            let max = 11
+            let limit = Math.floor(Math.random() * (max - min) ) + min;
+            for (let i = 0; i < 4; i++) {
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = i
+                }, ((3 - i) * 1000));
+            }
+            setTimeout(() => {
+                if (myTime == undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow"
+                } else {
+                    let buttonTime = Date.now()
+                    document.getElementById("target").innerHTML = "Time was " + (buttonTime - myTime)
+                }
+            }, 3000);
+        }
+        function display(i, limit) {
+      setTimeout(() => {
+        document.getElementById('countdown').innerHTML = i
+      }, ((limit-i)*1000))
+      
+    }
+    </script>
+</body>
