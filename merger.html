@@ -36,7 +36,7 @@
 		<button onclick="makeNewDiv()">Add end</button>
         <button onclick="addFront()">Add Front</button>
 		<button onclick="remove()">Remove</button>
-        <!-- <button onclick="swap()">Swap</button> -->
+        <button onclick="swap()">Swap</button>
 
 	
 	
@@ -73,29 +73,29 @@ function remove() {
       container.insertBefore(newElement, container.firstChild);
     }
 
-//     function swap() {
-//     const mergerItems = document.getElementsByClassName('merger');
-//     const length = mergerItems.length;
+    function swap() {
+    const mergerItems = document.getElementsByClassName('merger');
+    const length = mergerItems.length;
 
-//     if (length >= 2) {
-//       const index1 = Math.floor(Math.random() * length);
-//       let index2 = Math.floor(Math.random() * length);
+    if (length >= 2) {
+      const index1 = Math.floor(Math.random() * length);
+      let index2 = Math.floor(Math.random() * length);
 
-//       while (index2 === index1) {
-//         index2 = Math.floor(Math.random() * length);
-//       }
+      while (index2 === index1) {
+        index2 = Math.floor(Math.random() * length);
+      }
 
-//       const parent = document.getElementById('target');
+      const parent = document.getElementById('target');
 
-//       const item1 = mergerItems[index1];
-//       const item2 = mergerItems[index2];
+      const item1 = mergerItems[index1];
+      const item2 = mergerItems[index2];
 
-//       const item1Next = item1.nextSibling;
-//       const item2Next = item2.nextSibling;
+      const item1Next = item1.nextSibling;
+      const item2Next = item2.nextSibling;
 
-//       parent.insertBefore(item1, item2Next);
-//       parent.insertBefore(item2, item1Next);
-//     }
-//   }
+      parent.insertBefore(item1, item2Next);
+      parent.insertBefore(item2, item1Next);
+    }
+  }
 </script>
 </html>	

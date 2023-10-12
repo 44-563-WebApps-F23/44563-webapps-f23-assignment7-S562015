@@ -182,10 +182,12 @@
             var checkCount = 0;
             var penalty = 0;
             var lastCheck = 0;
-            var treasureLocation = 5;
-            var trapLocation = 18;
+            var treasureLocation;
+            var trapLocation = Math.floor(Math.random()*25);
             var gameOver = false;
-
+            do{
+                treasureLocation = Math.floor(Math.random()*25);
+            } while (treasureLocation === trapLocation)
             // Generate unique IDs for the 25 images and set onclick handlers
             for (var i = 0; i < 25; i++) {
                 var imgId = "image" + i;
@@ -251,7 +253,7 @@
             var penaltyText = document.getElementById("penalty");
             penaltyText.innerHTML = "Penalty is " + penalty;
         }
-
+        
     </script>
 </body>
 </html>
