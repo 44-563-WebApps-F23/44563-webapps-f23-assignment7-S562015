@@ -53,25 +53,25 @@ newElement.className = 'merger';
 document.querySelector('.flex-container').appendChild(newElement);
 }
 
-// function remove() {
-//       const mergerItems = document.getElementsByClassName('merger');
-//       const length = mergerItems.length;
+function remove() {
+      const mergerItems = document.getElementsByClassName('merger');
+      const length = mergerItems.length;
 
-//       if (length > 0) {
-//         const middleIndex = Math.floor(length / 2);
-//         const removedElement = document.querySelector('.flex-container').children[middleIndex];
-//         removedElement.remove();
-//       }
-//     }
+      if (length > 0) {
+        const middleIndex = Math.floor(length / 2);
+        const removedElement = document.querySelector('.flex-container').children[middleIndex];
+        removedElement.remove();
+      }
+    }
 
-//     function addFront() {
-//       const newElement = document.createElement('div');
-//       const inputValue = document.getElementById('inputText').value;
-//       newElement.innerHTML = inputValue;
-//       newElement.className = 'merger';
-//       const container = document.querySelector('.flex-container');
-//       container.insertBefore(newElement, container.firstChild);
-//     }
+    function addFront() {
+      const newElement = document.createElement('div');
+      const inputValue = document.getElementById('inputText').value;
+      newElement.innerHTML = inputValue;
+      newElement.className = 'merger';
+      const container = document.querySelector('.flex-container');
+      container.insertBefore(newElement, container.firstChild);
+    }
 
 //     function swap() {
 //     const mergerItems = document.getElementsByClassName('merger');
